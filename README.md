@@ -22,11 +22,8 @@ BeaverRecon is OSINT/doxing tool that scrapes sites for information
 
 ### Tools
 ❌ - Down 
-
 ✅ - Up and Fully Implemented 
-
 ☑️ - Up But Not Fully Implemented
-
 ⚠️ - Yet To Be Added
 
 - ✅ - http://ip-api.com/json/
