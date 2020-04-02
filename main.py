@@ -13,7 +13,7 @@ def cls():
         system("clear")
 
 def banner():
-    print (green + ''' 
+    print (reset + green + ''' 
                                                                                                          `--/:`                        
                                                                                                      ./ydmNNMNh                         
                                                                                                   `:hhsNMMMMMMN:                        
