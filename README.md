@@ -32,3 +32,5 @@ BeaverRecon is OSINT/doxing tool that scrapes sites for information
 - ⚠️ - http://intelx.io/
 - ⚠️ - http://haveibeenpwned.com/unifiedsearch/john.doe@example.com
 - ⚠️ - https://emailrep.io/
+- ⚠️ - http://ghostproject.fr/
+- ⚠️ - http://weleakinfo.to/
