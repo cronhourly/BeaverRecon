@@ -2,29 +2,16 @@ import requests
 from utils.colors import *
 import json as jsn
 import urllib3
+from requests import Session
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def igpartialemail(username):
-
+    s = Session()
     url = "https://instagram.com/accounts/account_recovery_send_ajax/"
-    headers = {
-    'Host' : 'www.instagram.com',
-    'User-Agent' : 'Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0',
-    'Accept': '*/*',
-    'Accept-Language': 'en-US,en;q=0.5',
-    'Accept-Encoding': 'gzip, deflate',
-    'X-CSRFToken': 'yNDkIGI5RNIm80rGlwMdYs7THx8OEdJy',
-    'X-Instagram-AJAX': '8f02a43ad311',
-    'X-IG-App-ID': '936619743392459',
-    'X-IG-WWW-Claim': '0',
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'X-Requested-With': 'XMLHttpRequest',
-    'Content-Length': '58',
-    'Origin': 'https://www.instagram.com',
-    'Connection': 'close',
-    'Referer': 'https://www.instagram.com/accounts/password/reset/',
-    'Cookie': 'ig_did=5C63FD9D-DC35-4A74-9211-CA81AA197467; csrftoken=yNDkIGI5RNIm80rGlwMdYs7THx8OEdJy; mid=Xedu2wAEAAGU7rLTjcGhohUrbx_F; rur=VLL'
-    }
+    g = s.get("https://www.instagram.com/accounts/password/reset/").text
+    token = re.search(r'csrf_token":"(.*?)"',g).group(1)
+
+    headers = {'x-csrftoken': token}
 
     rawdata = "email_or_username=" + username + "&recaptcha_challenge_field="
 
