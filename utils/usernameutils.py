@@ -2,16 +2,30 @@ import requests
 from utils.colors import *
 import json as jsn
 import urllib3
-from requests import Session
+from bs4 import BeautifulSoup
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 def igpartialemail(username):
-    s = Session()
-    url = "https://instagram.com/accounts/account_recovery_send_ajax/"
-    g = s.get("https://www.instagram.com/accounts/password/reset/").text
-    token = re.search(r'csrf_token":"(.*?)"',g).group(1)
 
-    headers = {'x-csrftoken': token}
+    url = "https://instagram.com/accounts/account_recovery_send_ajax/"
+    headers = {
+    'Host' : 'www.instagram.com',
+    'User-Agent' : 'Mozilla/5.0 (X11; Linux x86_64; rv:71.0) Gecko/20100101 Firefox/71.0',
+    'Accept': '*/*',
+    'Accept-Language': 'en-US,en;q=0.5',
+    'Accept-Encoding': 'gzip, deflate',
+    'X-CSRFToken': 'yNDkIGI5RNIm80rGlwMdYs7THx8OEdJy',
+    'X-Instagram-AJAX': '8f02a43ad311',
+    'X-IG-App-ID': '936619743392459',
+    'X-IG-WWW-Claim': '0',
+    'Content-Type': 'application/x-www-form-urlencoded',
+    'X-Requested-With': 'XMLHttpRequest',
+    'Content-Length': '58',
+    'Origin': 'https://www.instagram.com',
+    'Connection': 'close',
+    'Referer': 'https://www.instagram.com/accounts/password/reset/',
+    'Cookie': 'ig_did=5C63FD9D-DC35-4A74-9211-CA81AA197467; csrftoken=yNDkIGI5RNIm80rGlwMdYs7THx8OEdJy; mid=Xedu2wAEAAGU7rLTjcGhohUrbx_F; rur=VLL'
+    }
 
     rawdata = "email_or_username=" + username + "&recaptcha_challenge_field="
 
@@ -25,8 +39,6 @@ def igpartialemail(username):
         yee = "No Results :("
 
     return yee
-
-
 
 def scyllalookup(query, lookup): # Password, User, PassHash, PassSalt, Email, IP, UserId, Name, Domain 
     if query == "Password" or "PassHash" or "PassSalt":
@@ -46,9 +58,9 @@ def scyllalookup(query, lookup): # Password, User, PassHash, PassSalt, Email, IP
         names = []
         breaches = []
 
-        headers = {'Accept': 'application/json'}
+        headers = {'Accept': 'application/json', 'Authorization': 'Basic c2FtbXk6QmFzaWNQYXNzd29yZCE='}
         url = f"https://scylla.sh/search?q={query}:{lookup}"
-        r = requests.get(url, headers=headers, verify=False)
+        r = requests.get(url, headers=headers, verify=False, )
         json = r.json()
         readablejson = jsn.dumps(jsn.loads(str(r.text)),sort_keys=True, indent=4, separators=('', ':'))
 
@@ -88,8 +100,8 @@ def scyllalookup(query, lookup): # Password, User, PassHash, PassSalt, Email, IP
     
     return info
 
-'''def intelx():
-	url = "https://intelx.io/?s=bruh@gmail.com"
-	r = requests.get(url)
-	print(r.text)
-intelx()'''
+
+#Ideas
+'''
+Check Usernames on site
+'''
