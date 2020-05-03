@@ -13,31 +13,24 @@ def cls():
         system("clear")
 
 def banner():
-    print (reset + green + ''' 
-                                                                                                         `--/:`                        
-                                                                                                     ./ydmNNMNh                         
-                                                                                                  `:hhsNMMMMMMN:                        
-                                                                                               -:odNMNNMMMMMMMm/                        
-         __                                                                                   smNMMMMMMMMMMMMMN-                        
-        |  |--.-----.---.-.--.--.-----.----.                                                  /NMMMMMMMMMMMMMMd`                        
-        |  _  |  -__|  _  |  |  |  -__|   _|                                                  +NMMMMMMMMMMMMMN/                         
-        |_____|_____|___._|\___/|_____|__|                                                  `+NMMMMMMMMMMMMMNo                          
-                                                                                          .+dMMMMMMMMMMMMMMMd`                          
-                                                                                       `-+ymMMMMMMMMMMMMMMMMMN+                         
-        .----.-----.----.-----.-----.                                              `-+ydNMMMMMMMMMMMMMMMMMMMMMm+.                       
-        |   _|  -__|  __|  _  |     |                                            -odNMMMMMMMMMMMMMMMMMMMMMMMNddmd/-`                    
-        |__| |_____|____|_____|__|__|                                           .smMMMMMMMMMMMMMMMMMMMMMMMMMNs.`.:+y/                   
-                                                                              -dMMMMMMMMMMMMMMMMMMMMMMMMMMMN:                           
-        1. IP                                                                -mMMMMMMMMMMMMMMMMMMMMMMMMMMMMN.                           
-        2. Username                                                         `dMMMMMMMMMMMMMMMMMMMMMMMMMMMMMh                            
-        3. Name                                                             +NMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:                            
-        4. Email                                                            hMMMMMMMMMMMMMMMNmdmmNMMMMMMMMo                             
-        5. Address                                                          mMMMMMMMMMMMMMMMMNmdyo+dMMMMNs`                             
-        6. Phone                                                            mMMMMMMMMMMMMMMMMMMMMNs.dMMm+`                              
-        7. Settings                                     `/oyyhhhyyyso+:-..``hMMMMMMMMMMMMMMMMMMMMMN`smy-                                
-                                                        hMMMMMMMMMMMMMMMNmdhmMMMMMMMMMMMMMMMMMMMMMy`+-`                                 
-                                                        +dNNMMMMMMMMMMMNNNmmmNNMMMNNmdddmNNMMMMMMNsoossso+:                             
-                                                        `.://+++++///::--.``--::::.`   `.:::::::::::::::::`                             
+    print (green + ''' 
+ ______
+|   __ \.-----.---.-.--.--.-----.----.
+|   __ <|  -__|  _  |  |  |  -__|   _|
+|______/|_____|___._|\___/|_____|__|
+ ______
+|   __ \.-----.----.-----.-----.
+|      <|  -__|  __|  _  |     |
+|___|__||_____|____|_____|__|__|
+
+1. IP
+2. Username
+3. Name
+4. Email
+5. Phone
+6. Address
+7. Passwords
+8. Info
 ''' + reset)
 
 def mainloop():
@@ -112,6 +105,37 @@ def mainloop():
                 print (f"\n{reset}{green}{icon}{reset} {blue} Scylla Lookup {green}{icon}{reset}")
                 for x in scyllalookup("Email", email):
                     print (x)
+                input(purple + "\npress enter to go back: ")
+                continue
+
+            elif option == "5":
+                cls()
+                email = input(f"{purple}Phone:{reset}{bold} ")
+                cls()
+                print (f"\n{reset}{green}{icon}{reset} {blue} Phone Lookup {green}{icon}{reset}")
+                input(purple + "\npress enter to go back: ")
+                continue
+            
+            elif option == "6":
+                cls()
+                email = input(f"{purple}Phone:{reset}{bold} ")
+                cls()
+                print (f"\n{reset}{green}{icon}{reset} {blue} Phone Lookup {green}{icon}{reset}")
+                input(purple + "\npress enter to go back: ")
+                continue
+            
+            elif option == "7":
+                cls()
+                email = input(f"{purple}Phone:{reset}{bold} ")
+                cls()
+                print (f"\n{reset}{green}{icon}{reset} {blue} Phone Lookup {green}{icon}{reset}")
+                input(purple + "\npress enter to go back: ")
+                continue
+            
+            elif option == "8":
+                cls()
+                print (f"\n{reset}{green}{icon}{reset} {blue} Tool Info {green}{icon}{reset}\n")
+                print(f'{bold}{blue}Coded By:{reset} CatLinux\n{bold}{blue}Info:{reset} Tool Made For Reversing Info Quicker For OSINT Uses \n{bold}{blue}Sites Used:{reset} Instagram.com, syclla.sh, ip-api.com, thatsthem.com')
                 input(purple + "\npress enter to go back: ")
                 continue
     except KeyboardInterrupt:
