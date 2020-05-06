@@ -29,7 +29,7 @@ BeaverRecon is OSINT/doxing tool that scrapes sites for information
 - ✅ - http://ip-api.com/json/
 - ✅ - http://instagram.com/
 - ☑️ - https://thatsthem.com/
-- ❌ - http://scylla.sh/
+- ✅ - http://scylla.sh/
 - ⚠️ - http://intelx.io/
 - ⚠️ - http://haveibeenpwned.com/unifiedsearch/john.doe@example.com
 - ⚠️ - https://emailrep.io/
