@@ -68,8 +68,9 @@ def thatsthemip(lookup): #People, phone, address(street, city, state or zip), em
     addresses = []
     phones = []
     emails = []
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:76.0) Gecko/20100101 Firefox/76.0"}
     url = f"https://thatsthem.com/ip/{lookup}"
-    r = requests.get(url)
+    r = requests.get(url, headers=headers)
     html = r.text
     for line in html.split('\n'):
         if '<a href="/address' in line:
