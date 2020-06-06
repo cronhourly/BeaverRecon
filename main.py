@@ -126,9 +126,11 @@ def mainloop():
             
             elif option == "7":
                 cls()
-                email = input(f"{purple}Phone:{reset}{bold} ")
+                password = input(f"{purple}Password:{reset}{bold} ")
                 cls()
-                print (f"\n{reset}{green}{icon}{reset} {blue} Phone Lookup {green}{icon}{reset}")
+                print (f"\n{reset}{green}{icon}{reset} {blue} Scylla Lookup {green}{icon}{reset}")
+                for x in scyllalookup("Password", password)
+                print(x)
                 input(purple + "\npress enter to go back: ")
                 continue
             
